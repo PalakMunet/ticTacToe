@@ -1,6 +1,18 @@
 theBoard={'top-L':' ','top-M':' ','top-R':' ',
           'mid-L':' ','mid-M':' ','mid-R':' ',
           'low-L':' ','low-M':' ','low-R':' '}
+
+def validCheck(pos):
+    validPos=['top-L','top-M','top-R',
+          'mid-L','mid-M','mid-R',
+          'low-L','low-M','low-R']
+    while 1:
+        if pos in validPos:
+            break
+        else:
+            print("Please enter correct position!")
+            pos=input()
+
 def winCheck(board):
     winPos=[['top-L','top-M','top-R'],
             ['top-L','mid-M','low-R'],
@@ -16,9 +28,6 @@ def winCheck(board):
             return 1
     return 0
         
-            
-            
-
 def printBoard(board):
     print(board['top-L']+'|'+board['top-M']+'|'+board['top-R'])
     print('-+-+-')
@@ -31,6 +40,7 @@ for i in range(9):
     printBoard(theBoard)
     print('turn for ' + turn + '. ' + 'Move to which space?')
     move=input()
+    validCheck(move)
     theBoard[move]=turn
     check=winCheck(theBoard)
     if check==1:
@@ -39,7 +49,5 @@ for i in range(9):
         turn='O'
     else:
         turn='X'
-
-
-
+        
 printBoard(theBoard)
