@@ -26,13 +26,9 @@ def winCheck(board):
         if board[i[0]] == board[i[1]] and board[i[1]]==board[i[2]] and board[i[0]]!=' ':
             print(board[i[0]],"wins")
             return 1
-<<<<<<< HEAD
-    return 0
-        
-=======
-    return 0           
+        return 0
+          
 
->>>>>>> aef05d797e5f5fc384521db688f9f7af562a32d3
 def printBoard(board):
     print(board['top-L']+'|'+board['top-M']+'|'+board['top-R'])
     print('-+-+-')
